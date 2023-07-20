@@ -297,6 +297,35 @@ function getBeer(){
 
 }
 
+//fibonacciSequence generator
+function fibonacciGenerator (n) {
+
+    var output = [];
+    var firstSeq = 0;
+    var secondSeq = 1;
+    var nextSeq;
+
+    for (var i = 1; i <= n; i++){
+
+            
+
+        output.push(firstSeq);
+
+       // console.log(output);
+        
+        nextSeq = firstSeq + secondSeq;
+
+        firstSeq = secondSeq;
+        secondSeq = nextSeq;
+        
+    } 
+
+    return output;
+}
+
+
+//alert(fibonacciGenerator(10));
+
 
  
 
