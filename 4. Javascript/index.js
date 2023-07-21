@@ -57,7 +57,7 @@ function calcChange(moneyTendered, costperBottle){
 
 var change = getMilk(4, 1.5);
 
-alert("Hello, your change is " + change);*/
+alert("Hello, your change is " + change);
 
 //BMI calculator function 
 
