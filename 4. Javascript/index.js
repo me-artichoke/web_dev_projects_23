@@ -298,6 +298,9 @@ function getBeer(){
 }
 
 //fibonacciSequence generator
+
+//Take time to explain this code thoroughly based on the value of n
+
 function fibonacciGenerator (n) {
 
     var output = [];
