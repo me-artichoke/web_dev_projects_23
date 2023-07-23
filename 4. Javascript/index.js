@@ -171,15 +171,18 @@ function fizzBuzz(){
     if(count % 3 === 0 && count % 5 === 0){
         output.push("fizzBuzz");
         
-    } else if(count % 3 === 0){
+    } 
+    else if(count % 3 === 0){
 
         output.push("fizz");
         
-    } else if(count % 5 === 0){
+    } 
+    else if(count % 5 === 0){
 
         output.push("Buzz");
         
-    } else {
+    } 
+    else {
 
         output.push(count);
 
@@ -203,15 +206,18 @@ function fizzBuzz(){
             if(count % 3 === 0 && count % 5 === 0){
             output.push("fizzBuzz");
             
-        } else if(count % 3 === 0){
+        }
+        else if(count % 3 === 0){
     
             output.push("fizz");
             
-        } else if(count % 5 === 0){
+        }
+        else if(count % 5 === 0){
     
             output.push("Buzz");
             
-        } else {
+        }
+        else {
     
             output.push(count);
 
@@ -238,19 +244,22 @@ function fizzBuzz(){
             if(count  % 3 === 0 && count % 5 === 0){
             output.push("fizzBuzz");
             
-        } else if(count % 3 === 0){
-    
-            output.push("fizz");
-            
-        } else if(count % 5 === 0){
-    
-            output.push("Buzz");
-            
-        } else {
-    
-            output.push(count);
+            }
+            else if(count % 3 === 0){
+        
+                output.push("fizz");
+                
+            }
+            else if(count % 5 === 0){
+        
+                output.push("Buzz");
+                
+            }
+            else {
+        
+                output.push(count);
 
-        }
+            }
 
        
     }
