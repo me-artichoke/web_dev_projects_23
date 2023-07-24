@@ -339,6 +339,28 @@ function fibonacciGenerator (n) {
 //alert(fibonacciGenerator(10));
 
 
+ // calculator with a higher order function
  
+ //basic operation functions
+ function add(num1,num2){
+    return num1+num2;
+ }
+ function subtract(num1,num2){
+    return num1-num2;
+ }
+ function multiply(num1,num2){
+    return num1*num2;
+ }
+ function divide(num1,num2){
+    return num1/num2;
+ }
+
+//calculator function - higher order function 
+function calculator(input1,input2,operator){
+    return operator(input1,input2);
+}
+
+//call higher order function -- calculator 
+calculator(23,45,add);
 
 
