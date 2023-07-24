@@ -364,3 +364,35 @@ function calculator(input1,input2,operator){
 calculator(23,45,add);
 
 
+
+//housekeeper object
+
+// var houseKeeper1 = {
+
+//  name: "Joana",
+//  educationLevel: "High school",
+//  yearOfExperience: 2,
+//  areaOfExpertise: "cleaning",
+//  languages: ["English", "French", "Twi"]
+// }
+
+
+//create a constructor function
+// tis avoids the boring job of creating several objects of the same properties for housekeepers
+
+function HouseKeeper(name, age, hasWorkPermit, cleaningReportoire){
+
+ this.name = name;
+ this.age = age;
+ this.hasWorkPermit = hasWorkPermit;
+ this.cleaningReportoire = cleaningReportoire;
+ 
+}
+
+//initialise object
+
+var houseKeeper1 = new HouseKeeper("James", 27, true, ["Bathroom", "Lobby", "Entrance"]);
+
+houseKeeper1.cleaningReportoire.push("Kitchen");
+
+console.log(houseKeeper1.name);
