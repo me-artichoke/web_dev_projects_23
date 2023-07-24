@@ -387,6 +387,10 @@ function HouseKeeper(name, age, hasWorkPermit, cleaningReportoire){
  this.hasWorkPermit = hasWorkPermit;
  this.cleaningReportoire = cleaningReportoire;
  
+ //add a method
+ this.clean = function (){
+    alert("Cleaning in progress");
+ } 
 }
 
 //initialise object
@@ -394,5 +398,8 @@ function HouseKeeper(name, age, hasWorkPermit, cleaningReportoire){
 var houseKeeper1 = new HouseKeeper("James", 27, true, ["Bathroom", "Lobby", "Entrance"]);
 
 houseKeeper1.cleaningReportoire.push("Kitchen");
+
+//call the method -- this is similar to the audio method. Similar construct
+houseKeeper1.clean(); // this would initiate the alert "cleaning in progress"
 
 console.log(houseKeeper1.name);
