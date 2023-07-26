@@ -15,6 +15,9 @@ for (i = 0; i < selectButtonElement.length; i++){
         
         var buttonInnerHTML = this.innerHTML;
         makeSounds(buttonInnerHTML);
+
+        //distinguish clicked button here by call the respective function 
+        buttonAnimation(buttonInnerHTML);
         
     });
 }
@@ -24,7 +27,8 @@ document.addEventListener("keydown", function(event){
 
     //event parameter let's tap into to the event that triggered the event listener
     //key represents which key was pressed on the keyboard.
-    makeSounds(event.key);   
+    makeSounds(event.key); 
+    buttonAnimation(event.key); 
 });
 
 //function for sounds 
@@ -52,7 +56,7 @@ function makeSounds(key){
             new Audio("./sounds/tom-4.mp3").play();
             break;
         default:
-            alert("Sorry "+ key + " is not a drum key");
+            alert("Sorry "+ key + " is not assigned to a musical instrument");
             break;
     }
 }
@@ -60,3 +64,24 @@ function makeSounds(key){
 // //add sounds when button is clocked
 // var audio = new Audio("./sounds/tom-1.mp3");
 // audio.play();
+
+//distinguish the cliked on or pressed button by adding animation
+//create a function to apply to both scenarios
+
+function buttonAnimation (currentKey){
+
+    var activeButton = document.querySelector("."+currentKey);
+
+    //rrefer to the seperation of concerns - 
+    //code below adds a class PRESSED to the html element 
+    //which is already defined in the css
+    activeButton.classList.add("pressed"); 
+    
+    //the problem here is the class applied gets stuck 
+    //so write another code to remove after a certian period of time 
+    //use javascript setTimeout() funtion 
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100);
+}
