@@ -403,3 +403,33 @@ houseKeeper1.cleaningReportoire.push("Kitchen");
 houseKeeper1.clean(); // this would initiate the alert "cleaning in progress"
 
 console.log(houseKeeper1.name);
+
+
+
+//recreating the addEventListener function to understand callback function
+function anotherEventListener(typeOfEvent, callback){
+
+    var eventThatHappened = {
+
+        eventType: "keypress",
+        numberOfTimes: 2,
+        key: "w"
+
+
+    }
+
+    if(eventThatHappened.eventType === typeOfEvent){
+        callback(eventThatHappened);
+    }
+}
+
+//call the eventlistener function
+//a typical use would be to add the entire DOM document or a single element 
+// the result if this would be details of the event that happened
+// use debugger in the console to run through the code step by step
+debugger;
+document.anotherEventListener("keypress", function(event){ 
+    //console log the details of the event that happened
+    console.log(event);
+
+});
