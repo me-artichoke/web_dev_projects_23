@@ -394,7 +394,7 @@ function HouseKeeper(name, age, hasWorkPermit, cleaningReportoire){
 }
 
 //initialise object
-
+// using the new keyword and the constructor name creates a new object from the constructor 
 var houseKeeper1 = new HouseKeeper("James", 27, true, ["Bathroom", "Lobby", "Entrance"]);
 
 houseKeeper1.cleaningReportoire.push("Kitchen");
