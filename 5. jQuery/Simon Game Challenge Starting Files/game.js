@@ -9,8 +9,10 @@ function nextSequence(){
 
     gamePattern.push(randomChosenColour);
 
-    $('randomChosenColour').animate({opacity: 0.5});
+    return randomChosenColour;
 }
 
-
-//$(randomChosenColour).animate({Opacity: 0.5});
+//alert(nextSequence());
+var colorSelected = nextSequence();
+//alert(colorSelected);
+$("."+colorSelected).fadeIn().fadeOut().fadeIn();
