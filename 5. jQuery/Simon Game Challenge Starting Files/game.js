@@ -11,11 +11,11 @@ function nextSequence(){
 
 
    $("#"+randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-
-   var selectSound = new Audio('sounds/'+randomChosenColour+'.mp3');
-   selectSound.play();
-
    
+
+    
+   
+    return randomChosenColour;
 }
 
 
@@ -26,8 +26,37 @@ $(".btn").on("click",function(){
     //console.log(userChosenColour);
     userClickedPattern.push(userChosenColour);
 
-    //console.log(userClickedPattern);
+    playSounds(userChosenColour);
+    
     
 
    });
 
+function playSounds(name){
+
+    
+
+    switch (name) {
+        case "green":
+            var selectSound = new Audio('sounds/green.mp3');
+            selectSound.play();
+            break;
+        case "red":
+            var selectSound = new Audio('sounds/red.mp3');
+            selectSound.play();
+            break;
+        case "yellow":
+            var selectSound = new Audio('sounds/yellow.mp3');
+            selectSound.play();
+            break;
+        case "blue":
+            var selectSound = new Audio('sounds/blue.mp3');
+            selectSound.play();
+            break;
+    
+        default:
+            alert("no input!");
+            break;
+    }
+
+}
