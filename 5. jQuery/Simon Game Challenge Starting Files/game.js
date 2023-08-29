@@ -42,7 +42,22 @@ function checkAnswer(currentLevel){
         console.log("wrong");
         var wrongSound = new Audio('sounds/wrong.mp3');
         wrongSound.play();
+
+        $('body').addClass('game-over');
+        setTimeout(function(){
+            $('body').removeClass('game-over');
+        },200)
+
+        $('h1').text('Game Over, Press Any Key to Restart');
+
+        startOver();
     }
+}
+
+function startOver(){
+    level = 0;
+    gamePattern = [];
+    started = false;
 }
 
 
