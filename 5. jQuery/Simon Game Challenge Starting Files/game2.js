@@ -9,6 +9,8 @@ var gameStarted = false;
 
 var gameLevel = 0;
 
+
+
 function nextSequence(){
 
     //reset clickedpattern array
@@ -36,7 +38,7 @@ $('.btn').click(function(){
 
     //play sounds based on buttons clicked
     playSound(userChosenColour);
-    console.log("User clicked pattern "+userClickedPattern);
+   // console.log("User clicked pattern "+userClickedPattern);
     animatePress(userChosenColour);
 
     //call check answer
@@ -49,7 +51,7 @@ $(document).keypress(function(){
         nextSequence();
         $('h1').text('Level '+ gameLevel);
     }
-})
+});
 
 function playSound(name){
 
@@ -62,14 +64,14 @@ function checkAnswer(currentLevel){
     //check if users clicked pattern is equal to the game pattern
     if(userClickedPattern[currentLevel] === gamePattern[currentLevel]){
         //console.log('success '+gamePattern[currentLevel]);
-        if(gamePattern.length === userClickedPattern.length){
+        if(userClickedPattern.length === gamePattern.length){
             setTimeout(function(){
                 nextSequence();
             },1000)
         }
-    } 
-    else{
-        console.log('Wrong');
+    } else {
+
+        //console.log('Wrong');
         //play wrong sound in Ghana
         var wrongSound = new Audio("sounds/wrong.mp3");
         wrongSound.play();
@@ -82,6 +84,10 @@ function checkAnswer(currentLevel){
 
         //change h1 time to game over
         $('h1').text('Game Over, Press Any Key to Restart');
+
+        //call startOver function to reset the game
+        startOver();
+
     }
 }
 
@@ -91,4 +97,11 @@ function animatePress(currentColour){
     setTimeout(function(){
         $('#'+currentColour).removeClass('pressed');
     },100)
+}
+
+//Game over function
+function startOver(){
+    gameLevel = 0;
+    gamePattern = [];
+    gameStarted = false;
 }
