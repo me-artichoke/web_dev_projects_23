@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+
+.meme_image{
+    border: 5px solid white;
+    width: 100%;
+   
+}
+h1 {
+    
+    font-family: 'Libre Baskerville', serif;
+    text-transform: uppercase;
+}
+p{
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+}
+
+.meme_container{
+    width: 50%;  /* total width of the containe is 100% */
+    margin-left: 25%; /* after 50% width, there would 50% space left, so create a 25% space on the left tp center the div based on it's width */
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+
+}
