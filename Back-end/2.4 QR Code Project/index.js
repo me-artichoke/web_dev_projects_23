@@ -7,17 +7,31 @@
 //prompt use for input
 import { error } from 'console';
 import inquirer from 'inquirer';
+import qr from 'qr-image';
+import fs from 'fs';
 
 inquirer
     .prompt([
         {
-            name: "userName",
-            type: "input",
-            message: "What is your name?"
+            name: "URL",
+            message: "Type your URL:",
         },
     ])
-    .then((answer) => {
-        console.log("Hello " + answer.userName)
+    .then((answers) => {
+
+        const url = answers.URL;
+
+         //turn url into gr-image
+        var qr_png = qr.image(url, {type: 'png'}); //take user input for qr-image 
+
+        qr_png.pipe(fs.createWriteStream('url_qr.png'));
+
+        //create a text file to store user input - use native modules
+        fs.writeFile('url.txt', url, (err) => {
+            if (err) throw err;
+            console.log('url saved to file successfully!');
+        });
+        
     })
     .catch((error) => {
         if(error.isTtyError) {
@@ -26,3 +40,13 @@ inquirer
             console.log("Something's gone wrong. Try again!")
         }
     });
+
+   
+
+
+
+
+    
+
+
+    
